@@ -26,6 +26,10 @@ app.use(function validateBearerToken(req, res, next) {
 
 const validTypes = [`Bug`, `Dark`, `Dragon`, `Electric`, `Fairy`, `Fighting`, `Fire`, `Flying`, `Ghost`, `Grass`, `Ground`, `Ice`, `Normal`, `Poison`, `Psychic`, `Rock`, `Steel`, `Water`]
 
+app.get('', function handleGetTypes(req, res) {
+  res.json({'Welcome to the PokeDex!'})
+})
+
 app.get('/types', function handleGetTypes(req, res) {
   res.json(validTypes)
 })
@@ -62,6 +66,3 @@ app.use((error, req, res, next) => {
 })
 
 const PORT = process.env.PORT || 8000
-
-app.listen(PORT, () => {
-})
